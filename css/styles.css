@@ -195,16 +195,6 @@
     100% { background-position: -200% 0; }
 }
 
-/* Dark mode adjustments */
-[data-theme="dark"] .skill-category {
-    background: var(--card-bg);
-    border-color: var(--border-color);
-}
-
-[data-theme="dark"] .skill-progress {
-    background: linear-gradient(90deg, var(--primary-color), #818cf8);
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .skills-grid {
@@ -556,19 +546,6 @@
     --nav-bg: rgba(255, 255, 255, 0.8);
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --transition: all 0.3s ease;
-}
-
-/* Dark Theme Colors */
-[data-theme="dark"] {
-    --primary-color: #8B5CF6;
-    --primary-light: #7C3AED;
-    --secondary-color: #2DD4BF;
-    --text-color: #E5E7EB;
-    --light-text: #9CA3AF;
-    --background: #111827;
-    --card-bg: #1F2937;
-    --nav-bg: rgba(17, 24, 39, 0.8);
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 /* Base Styles */
@@ -1234,50 +1211,6 @@ section::before {
     font-size: 0.9rem;
 }
 
-/* Dark mode adjustments */
-[data-theme="dark"] #certifications .certification-front,
-[data-theme="dark"] #certifications .certification-back {
-    background: var(--card-bg);
-    border-color: var(--border-color);
-}
-
-[data-theme="dark"] #certifications .certification-front h3,
-[data-theme="dark"] #certifications .certification-back h4 {
-    color: var(--heading-color);
-}
-
-[data-theme="dark"] #certifications .certification-front p,
-[data-theme="dark"] #certifications .certification-back ul li {
-    color: var(--text-color);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #certifications .certifications-container {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    #certifications .certification-card {
-        min-height: 280px;
-    }
-    
-    #certifications .certification-front,
-    #certifications .certification-back {
-        padding: 1.5rem;
-    }
-    
-    #certifications .section-title {
-        font-size: 2rem;
-    }
-    
-    #certifications .section-subtitle {
-        font-size: 1rem;
-    }
-}
-
 /* Animation for the flip effect */
 @keyframes flipInY {
     from {
@@ -1393,40 +1326,6 @@ section::before {
 .interest-card:hover h3,
 .interest-card:hover p {
     color: var(--text-color);
-}
-
-/* Dark mode adjustments */
-[data-theme="dark"] .interest-card {
-    background: var(--card-bg);
-    border-color: var(--border-color);
-}
-
-[data-theme="dark"] .interest-card h3 {
-    color: var(--heading-color);
-}
-
-[data-theme="dark"] .interest-card p {
-    color: var(--light-text);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .interests-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .interest-card {
-        padding: 1.5rem;
-    }
-    
-    .interest-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 1.8rem;
-    }
 }
 
 /* Projects Section */
@@ -2566,10 +2465,6 @@ footer p {
     background: linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(224, 231, 255, 0.8) 100%);
 }
 
-[data-theme="dark"] .interests-section {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
-}
-
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -2603,34 +2498,6 @@ footer p {
 .interest-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="dark"] .interest-card {
-    background: rgba(30, 30, 45, 0.7);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .interest-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.interest-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.interest-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .interest-card:hover::before {
@@ -2732,6 +2599,7 @@ footer p {
     .interest-card p {
         font-size: 0.85rem;
     }
+}
 
 @media (max-width: 480px) {
     .interests-grid {
@@ -2761,3 +2629,4 @@ footer p {
         line-height: 1.4;
         margin: 0.25rem 0 0;
     }
+}
