@@ -114,6 +114,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 offset: 100
             });
         }
+
+        // Hamburger menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('open');
+                navLinks.classList.toggle('open');
+                menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('open'));
+            });
+            // Close menu on nav link click (mobile)
+            navLinks.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 900) {
+                        menuToggle.classList.remove('open');
+                        navLinks.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
     } catch (error) {
         console.error('Error during initialization:', error);
     }
