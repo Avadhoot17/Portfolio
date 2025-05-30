@@ -27,38 +27,6 @@ function updateText() {
     }, 500);
 }
 
-// Theme Toggle Functionality
-function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    
-    // Check for saved theme preference or use system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme) {
-        html.setAttribute('data-theme', savedTheme);
-    } else if (systemPrefersDark) {
-        html.setAttribute('data-theme', 'dark');
-    }
-    
-    // Toggle theme on button click
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            
-            // Add animation class
-            document.body.classList.add('theme-transition');
-            setTimeout(() => {
-                document.body.classList.remove('theme-transition');
-            }, 300);
-        });
-    }
-}
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -130,9 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Start role rotation
         updateText();
         setInterval(updateText, 3500);
-        
-        // Initialize theme
-        initTheme();
         
         // Set up scroll event
         window.addEventListener('scroll', setActiveNavLink);
